@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>br.com.j11</groupId>
+        <artifactId>cagadas</artifactId>
+        <version>0.0.1</version>
+    </parent>
+    <artifactId>cagadas-application</artifactId>
+    <name>cagadas-application</name>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <packaging>jar</packaging>
+    <dependencies>
+        <!-- DEPENDENCIAS de Módulos    -->
+        <dependency>
+            <groupId>br.com.j11</groupId>
+            <artifactId>cagadas-domain</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>br.com.j11</groupId>
+            <artifactId>cagadas-infrastructure</artifactId>
+        </dependency>
+        <!-- DEPENDENCIAS do Framework GUMGA    -->
+        <dependency>
+            <groupId>gumga.framework</groupId>
+            <artifactId>gumga-domain</artifactId>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+</project>

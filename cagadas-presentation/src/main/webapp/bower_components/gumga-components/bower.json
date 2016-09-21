@@ -1,0 +1,42 @@
+{
+  "name": "gumga-components",
+  "version": "3.1.4",
+  "authors": [
+    "Gumga Tecnologia da Informação S/A."
+  ],
+  "description": "Those component's were made by the Front End Developing Team of Gumga S/A.",
+  "main": "gulpfile.js",
+  "keywords": [
+    "gumga",
+    "components",
+    "javascript",
+    "angularjs"
+  ],
+  "license": "LGPL",
+  "homepage": "http://www.gumga.com.br",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src",
+    "report",
+    "coverage",
+    "docs"
+  ],
+  "devDependencies": {
+    "angular-mocks": "1.4.9",
+    "bootstrap-stylus": "~4.0.5",
+    "angular-animate": "~1.4.3"
+  },
+  "dependencies": {
+    "angular": "1.4.9",
+    "angular-bootstrap": "latest",
+    "angular-ui-router": "~0.2.15",
+    "jquery": "~2.1.4",
+    "mousetrap-latest": "~1.5.3",
+    "ng-img-crop": "ngImgCrop#~0.3.2",
+    "remarkable-bootstrap-notify": "~3.1.3"
+  }
+}

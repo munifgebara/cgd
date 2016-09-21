@@ -1,0 +1,17 @@
+<form name="Modal">
+<div class="modal-header">
+    <h3 class="modal-title" gumga-translate-tag=" gumgatagvaluedefinition.title"></h3>
+</div>
+<div class="modal-body" style="overflow: auto">
+    <div gumga-form-class="name">
+        <label gumga-translate-tag="gumgatagvaluedefinition.name">name</label>
+        <input gumga-error type="text" name="name" ng-model="gumgatagvaluedefinition.data.name" gumga-required gumga-min-length="1"  class="form-control" />
+    </div>
+
+</div>
+<div class="clearfix"></div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="ok(entity)" ng-disabled="Modal.$invalid">OK</button>
+    <button type="button" class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>
+</form>

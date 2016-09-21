@@ -1,0 +1,67 @@
+{
+  "coisa": {
+    "title": "Coisa"
+  ,"menulabel": "Coisa "
+  ,"id": "Identificador"
+  ,"descricao": "Descrição"
+  ,"valor": "Valor"
+  ,"ativo": "Ativo"
+  ,"new": "Novo"
+  ,"base": "Coisa"
+  ,"list": "Listar Coisa"
+  ,"edit": "Editar Coisa"
+  ,"insert": "Inserir Coisa"
+  }
+,"address": {
+  "cep": "CEP"
+,"numero": "Número"
+,"bairro":"Bairro"
+,"uf":"Estado"
+,"pais": "País"
+,"complemento": "Complemento"
+,"logradouro": "Logradouro"
+,"tipologradouro": "Tipo de Logradouro"
+,"localidade": "Localização"
+}
+,"formbuttons": {
+  "inserir": "Continuar inserindo"
+}
+,"table": {
+  "select": "Selecionar Todos",
+  "clean": "Limpar pesquisa"
+}
+, "advanced": {
+  "gt": "maior que"
+,"ge": "maior igual"
+,"lt": "menor que"
+,"le": "menor igual"
+,"eq": "igual "
+,"ne": "diferente de"
+,"in": "faz parte de"
+,"not_in": "não faz parte de"
+,"contains": "contém"
+,"starts_with": "começa com"
+,"ends_with": "termina com"
+,"not_contains": "não contém"
+},
+  "general":{
+    "coisa": "Coisa Base",
+    "forgot": "Esqueceu sua Senha?"
+  },
+  "welcome":{
+     "menulabel": "Welcome"
+   },
+   "home": {
+  "menulabel": "Início"
+},
+"gumgatagdefinition":{
+    "name":"Nome"
+    ,"menuLabel": "Tags"
+},
+"configuration": {
+  "menulabel": "Configurações",
+  "gumgatagdefinition": "Tags",
+  "gumgacustomfield": "Atributos Genéricos"
+}
+
+}

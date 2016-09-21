@@ -1,0 +1,142 @@
+<form name="GumgaCustomFieldForm" gumga-form novalidate>
+  <div class="row">
+    <div class="col-md-6">
+      <div gumga-form-class="clazz">
+        <label gumga-translate-tag="gumgacustomfield.clazz">clazz</label>
+        <select class='form-control' gumga-error name="clazz" ng-model="gumgacustomfield.data.clazz" ng-options="c.value as c.label for c in clazzes"></select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div gumga-form-class="nome">
+        <label gumga-translate-tag="gumgacustomfield.name">name</label>
+        <input gumga-error type="text" name="nome" ng-model="gumgacustomfield.data.name" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div gumga-form-class="description">
+        <label gumga-translate-tag="gumgacustomfield.description">description</label>
+        <input gumga-error type="text" name="description" ng-model="gumgacustomfield.data.description" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div gumga-form-class="type">
+        <label gumga-translate-tag="gumgacustomfield.type">Type</label>
+        <select class='form-control' gumga-error name="type" ng-model="gumgacustomfield.data.type" ng-options="cf.value as cf.label for cf in customFields"></select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div gumga-form-class="visualizationOrder">
+        <label gumga-translate-tag="gumgacustomfield.visualizationOrder">visualizationOrder</label>
+        <input gumga-error type="number" name="visualizationOrder" ng-model="gumgacustomfield.data.visualizationOrder" class="form-control" />
+      </div>
+    </div>
+    <div class="col-md-2 col-md-offset-8">
+      <div gumga-form-class="active">
+        <button type="button" class="btn btn-block" ng-class="{'btn-success': gumgacustomfield.data.active, 'btn-default': !gumgacustomfield.data.active}" name="active" ng-model="gumgacustomfield.data.active" btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+          <span ng-show="gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.active">Active</span>
+          <span ng-show="!gumgacustomfield.data.active" gumga-translate-tag="gumgacustomfield.inactive">Inactive</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="gumgacustomfield.data.type == 'SELECTION'">
+    <h3 class="page-header" gumga-translate-tag="gumgacustomfield.optionsGroup">optionsGroup</h3>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div gumga-form-class="optionsCollection">
+          <label gumga-translate-tag="gumgacustomfield.optionsCollection">optionsCollection</label>
+          <input gumga-error type="text" name="optionsCollection" ng-model="gumgacustomfield.data.optionsCollection" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div gumga-form-class="optionValueField">
+          <label gumga-translate-tag="gumgacustomfield.optionValueField">optionValueField</label>
+          <input gumga-error type="text" name="optionValueField" ng-model="gumgacustomfield.data.optionValueField" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div gumga-form-class="optionLabelField">
+          <label gumga-translate-tag="gumgacustomfield.optionLabelField">optionLabelField</label>
+          <input gumga-error type="text" name="optionLabelField" ng-model="gumgacustomfield.data.optionLabelField" class="form-control" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div gumga-form-class="options">
+          <label gumga-translate-tag="gumgacustomfield.options">options</label>
+          <textarea gumga-error name="options" ng-model="gumgacustomfield.data.options" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div>
+          <label gumga-translate-tag="gumgacustomfield.example">example</label>
+          <textarea name="example" class="form-control" disabled="disabled">[{"value": "1", "label": "Opção 1"}, {"value": "2", "label": "Opção 2"}]</textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <h3 class="page-header" gumga-translate-tag="gumgacustomfield.scriptsGroup">scripts</h3>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div gumga-form-class="defaultValueScript">
+        <label gumga-translate-tag="gumgacustomfield.defaultValueScript">defaultValueScript</label>
+        <textarea gumga-error name="defaultValueScript" ng-model="gumgacustomfield.data.defaultValueScript" class="form-control"></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div gumga-form-class="validationScript">
+        <label gumga-translate-tag="gumgacustomfield.validationScript">validationScript</label>
+        <textarea gumga-error name="validationScript" ng-model="gumgacustomfield.data.validationScript" class="form-control"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div gumga-form-class="validationDescription">
+        <label gumga-translate-tag="gumgacustomfield.validationDescription">validationDescription</label>
+        <input gumga-error type="text" name="validationDescription" ng-model="gumgacustomfield.data.validationDescription" class="form-control" />
+      </div>
+    </div>
+  </div>
+
+  <!-- <h3 class="page-header" gumga-translate-tag="gumgacustomfield.groupingGroup">groupingGroup</h3>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div gumga-form-class="fieldGroup">
+        <label gumga-translate-tag="gumgacustomfield.fieldGroup">fieldGroup</label>
+        <input gumga-error type="text" name="fieldGroup" ng-model="gumgacustomfield.data.fieldGroup" class="form-control" />
+      </div>
+    </div>
+  </div>
+ -->
+  <h3 class="page-header" gumga-translate-tag="gumgacustomfield.translateGroup">translateGroup</h3>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div gumga-form-class="translateKey">
+        <label gumga-translate-tag="gumgacustomfield.translateKey">translateKey</label>
+        <input gumga-error type="text" name="translateKey" ng-model="gumgacustomfield.data.translateKey" class="form-control" />
+      </div>
+    </div>
+  </div>
+
+  <gumga-form-buttons
+    back="gumgacustomfield.list"
+    submit="gumgacustomfield.methods.put(gumgacustomfield.data)"
+    position="right"
+    valid="GumgaCustomFieldForm.$valid"
+    confirm-dirty="true"
+    continue="false">
+  </gumga-form-buttons>
+</form>

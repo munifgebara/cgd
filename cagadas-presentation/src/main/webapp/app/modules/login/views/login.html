@@ -1,0 +1,33 @@
+<div class="login-container" style="height: 100%">
+    <div class="col-md-offset-4 col-md-4">
+        <div class="panel panel-default" style="margin-top: 20%;border: none;">
+            <div class="panel-heading heading-gumga">
+                <img src="./resources/images/gumga.png" alt="Gumga Logo" class="logo">
+            </div>
+            <div class="panel-body">
+                <p class="text-login">Faça o login</p>
+                <form name="loginForm" ng-submit="doLogin(user)" novalidate>
+                    <div class="container-fluid" >
+                        <div ng-class="{'form-group has-success': loginForm.email.$valid,'form-group has-error': loginForm.email.$invalid}">
+                            <input name="email" placeholder="E-mail" type="email" class="input-login" ng-model="user.email" required ng-blur="changeFocus()"
+                                   ng-model-options="{ updateOn: 'default', debounce: {'default': 150}}"/>
+                            <p class="text-danger email" ng-show="loginForm.email.$invalid && loginForm.email.$dirty">É necessário entrar com um e-mail válido!</p>
+                        </div>
+                        <div ng-class="{'form-group has-success': loginForm.password.$valid,'form-group has-error': loginForm.password.$invalid }">
+                            <input name="password" placeholder="Password" type="password" class="input-login" ng-model="user.password" required>
+                        </div>
+                        <button type="submit" ng-class="{'btn btn-danger btn-gumga': loginForm.$invalid,'btn btn-success btn-gumga': loginForm.$valid}" ng-disabled="loginForm.$invalid">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                    <a ui-sref="login.insert" class="btn " style="color: #000">
+                        <small><strong>Cadastro</strong></small>
+                    </a>
+                    <a ui-sref="login.forgot" class="pull-right btn" style="color: #000"><small><strong>Esqueceu sua senha?</strong></small></a>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div> 
+</div>

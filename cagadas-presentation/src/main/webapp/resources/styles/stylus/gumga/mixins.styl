@@ -1,0 +1,66 @@
+borderRadius()
+  -webkit-border-radius: arguments;
+  -moz-border-radius: arguments;
+  border-radius: arguments;
+
+boxShadow()
+  -webkit-box-shadow: arguments
+  box-shadow: arguments
+
+animation(name, duration, count, timing)
+  animation-name name
+  animation-duration duration
+  animation-iteration-count count
+  animation-timing-function timing
+
+  -moz-animation-name name;
+  -moz-animation-duration duration
+  -moz-animation-iteration-count count
+  -moz-animation-timing-function timing
+
+  -webkit-animation-name name;
+  -webkit-animation-duration duration
+  -webkit-animation-iteration-count count
+  -webkit-animation-timing-function timing
+  
+transition()
+  -webkit-transition arguments
+  -moz-transition arguments
+  -ms-transition arguments
+  -o-transition arguments
+  transition arguments
+@keyframes shake {
+  0% {
+    transform: translate(3px, 0);
+  }
+  50% {
+    transform: translate(-3px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@-moz-keyframes shake {
+  0% {
+    -moz-transform: translate(3px, 0);
+  }
+  50% {
+    -moz-transform: translate(-3px, 0);
+  }
+  100% {
+    -moz-transform: translate(0, 0);
+  }
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: translate(3px, 0);
+  }
+  50% {
+    -webkit-transform: translate(-3px, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+  }
+}

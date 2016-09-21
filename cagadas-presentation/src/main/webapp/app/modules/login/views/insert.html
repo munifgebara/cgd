@@ -1,0 +1,46 @@
+<div class="login-container" >
+    <div class="col-md-offset-4 col-md-4">
+        <div class="panel panel-default" style="margin-top: 20%;border: none;">
+            <div class="panel-heading heading-gumga">
+                <center>
+                    <img src="./resources/images/gumga.png" alt="Gumga Logo" class="logo">
+                </center>
+            </div>
+            <div class="panel-body">
+                <p class="text-login">Cadastrar-me</p>
+                
+                <form name="loginForm" ng-submit="doRegister(user)" novalidate>
+                    <div class="container-fluid" >
+                        <div ng-class="{'form-group has-success': loginForm.name.$valid,'form-group has-error': loginForm.name.$invalid }">
+                            <input style="margin-bottom: 5px;" name="name" placeholder="Nome"  tooltip="Preencha seu nome completo" ng-focus="nameFocus = true" tooltip-placement="top" tooltip-trigger="mouseenter" type="text" class="input-login" ng-model="user.name" required ng-blur="changeFocus()"/>
+                            <label class="text-danger" ng-show="loginForm.name.$invalid && nameFocus">Preencha seu nome</label>
+                        </div>
+                        <div ng-class="{'form-group has-success': loginForm.email.$valid,'form-group has-error': loginForm.email.$invalid }">
+                            <input style="margin-bottom: 5px;" name="email" id="email"  placeholder="E-mail"  ng-focus="emailFocus = true" tooltip="Insira seu endereço de e-mail " tooltip-placement="top" tooltip-trigger="mouseenter" type="email" class="input-login" ng-model="user.email" required />
+                            <label class="text-danger" ng-show="loginForm.email.$invalid && emailFocus">Preencha seu e-mail corretamente.</label>
+                        </div>
+                        <div ng-class="{'form-group has-success': loginForm.password.$valid,'form-group has-error': loginForm.password.$invalid }">
+                            <input style="margin-bottom: 5px;" ng-keyup="validPassword(user.password)" name="password" placeholder="Senha" ng-focus="passwordFocus = true"  tooltip="Escolha uma senha de acesso" tooltip-placement="top" tooltip-trigger="mouseenter" type="password" class="input-login" ng-model="user.password" required>
+                            <label class="text-danger" ng-show="passwordInvalid && passwordFocus">Escolha uma senha.</label>
+                        </div>
+                        <div ng-class="{'form-group has-success ': loginForm.password.$valid && user.password == user.passwordConfirm,'form-group has-error': loginForm.password.$invalid || user.password != user.passwordConfirm}">
+                            <input style="margin-bottom: 5px;" ng-focus="passwordConfirmFocus = true" ng-keyup="validPasswordConfirm(user.passwordConfirm, user.password)" name="password" placeholder="Confirmar senha"  tooltip="Repita sua senha escolhida" tooltip-placement="top" tooltip-trigger="mouseenter" type="password" class="input-login" ng-model="user.passwordConfirm" required>
+                            <label class="text-danger" ng-show="passwordConfirmInvalid && passwordConfirmFocus">Repita a senha corretamente.</label>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" ng-class="{'btn btn-danger btn-gumga': loginForm.$invalid || !btDisabled,'btn btn-success btn-gumga': loginForm.$valid || btDisabled}" ng-disabled="loginForm.$invalid || !btDisabled">Cadastrar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <a ui-sref="login.log" class="btn" style="color: #000;">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <small><strong >Login </strong></small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4"></div> 
+</div>
+

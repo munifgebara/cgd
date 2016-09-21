@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>Gumga</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/styles/css/reset.css"/>
+    <link rel="stylesheet" href="bower_components/gumga-components/dist/gumga.min.css"/>
+    <link rel="stylesheet" href="bower_components/animate.css/animate.min.css"/>
+</head>
+<body>
+    <div class="loading">        
+    </div>
+
+    <div ui-view style="height: 100%" gumga-translate="pt-br">
+    </div>
+
+    <script src="bower_components/requirejs/require.js"></script>
+
+    <script src="app/config.js"></script>
+<script>
+    requirejs(['angular', 'app/app'], function (angular) {
+        angular.bootstrap(document, ['app.core']);
+    });
+</script>
+<script type="text/ng-template" id="multiEntity.html">
+    <gumga-nav></gumga-nav>
+    <gumga-menu menu-url="gumga-menu.json" keys-url="keys.json"></gumga-menu>
+    <div class="gumga-container">
+        <gumga-multi-entity-search data="multi.search"></gumga-multi-entity-search>
+    </div>
+
+</script>
+    <script type="text/ng-template" id="modalTemplate.html">
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body">
+            Nome
+            <input type="text" ng-model="entity.nome" class="form-control"/>
+            Idade
+            <input type="text" ng-model="entity.idade" class="form-control" />
+
+            <gumga-one-to-many children="entity.filhos" displayable-property="nome" name="Coisa" template-url="modalTemplate.html" controller="ModalController">
+
+            </gumga-one-to-many>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</body>
+</html>

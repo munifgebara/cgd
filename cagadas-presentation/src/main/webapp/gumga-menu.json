@@ -1,0 +1,33 @@
+[
+	{
+  "label": "Home",
+  "URL": "welcome",
+  "key": "CRUD-BASE",
+  "icon": "glyphicon glyphicon-home",
+  "filhos": []
+	}	,
+	{
+		"label": "configuration",
+		"URL": "configuration",
+		"key": "CONFIGURATION",
+		"gumgatagdefinition": "Tags",
+		"filhos": [
+				{
+						"label": "gumgacustomfield",
+						"URL": "gumgacustomfield.list",
+						"key": "CUSTOMFIELDS",
+						"icon": "glyphicon glyphicon-tags",
+						"filhos": []
+
+				},
+				{
+						"label": "gumgatagdefinition",
+						"URL": "gumgatagdefinition.list",
+						"key": "TAGS",
+						"icon": "glyphicon glyphicon-tag",
+						"filhos": []
+				}
+		]
+  }
+
+]

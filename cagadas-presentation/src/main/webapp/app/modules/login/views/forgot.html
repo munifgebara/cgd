@@ -1,0 +1,33 @@
+<div class="login-container" >
+    <div class="col-md-offset-4 col-md-4">
+        <div class="panel panel-default" style="margin-top: 20%;border: none;">
+            <div class="panel-heading heading-gumga">
+                <center>
+                    <img src="./resources/images/gumga.png" alt="Gumga Logo" class="logo">
+                </center>
+            </div>
+            <div class="panel-body">
+                <p class="text-login">Recuperação de senha</p>
+                <form name="loginForm" ng-submit="doForgot(email)" novalidate>
+                    <div class="container-fluid" >
+                        <div ng-class="{'form-group has-success': loginForm.email.$valid,'form-group has-error': loginForm.email.$invalid }">                    
+                            <input name="email" popover-placement="top"  tooltip="Insira um endereço de e-mail válido" tooltip-placement="top" tooltip-trigger="mouseenter"  placeholder="E-mail" type="email" class="input-login"  ng-model="email" required ng-blur="changeFocus()"/>
+                            <p class="text-danger" ng-show="loginForm.email.$invalid">You must enter a valid email</p>
+                        </div>
+                        <div class="text-right">
+                            <button type="submit" ng-class="{'btn btn-danger btn-gumga': loginForm.$invalid,'btn btn-success btn-gumga': loginForm.$valid}" ng-disabled="loginForm.$invalid || disableButton == 1">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        <div class="panel-footer">
+            <a ui-sref="login.log" class="btn" style="color: #000;">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <small><strong >Login </strong></small>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="col-md-4"></div> 
+</div>
+

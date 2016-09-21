@@ -1,0 +1,67 @@
+<section class="row navbar">
+  <div class="col-md-5">
+    <a ui-sref="gumgacustomfield.insert" class="btn btn-primary">
+      <i class="glyphicon glyphicon-plus"></i>
+      Novo
+    </a>
+    <button type="button" class="btn btn-danger" ng-click="gumgacustomfield.methods.delete(selectedValues)">
+      <i class="glyphicon glyphicon-trash"></i>
+      Remover
+    </button>
+  </div>
+  <div class="col-md-7">
+    <gumga-search fields="clazz,name,description,active,type,validationDescription,validationScript,defaultValueScript,options,optionValueField,optionLabelField,optionsCollection,visualizationOrder,fieldGroup,translateKey"
+      advanced="true"
+      get-queries="gumgacustomfield.methods.getQuery(page)"
+      search-method="gumgacustomfield.methods.search(field,param)"
+      advanced-method="gumgacustomfield.methods.advancedSearch(param)"
+      translate-entity="gumgacustomfield">
+      <advanced-field name="id" type="string"></advanced-field>
+      <advanced-field name="clazz" type="string"></advanced-field>
+      <advanced-field name="name" type="string"></advanced-field>
+      <advanced-field name="description" type="string"></advanced-field>
+      <advanced-field name="active" type="boolean"></advanced-field>
+      <advanced-field name="type" type="string"></advanced-field>
+      <advanced-field name="validationdescription" type="string"></advanced-field>
+      <advanced-field name="validationscript" type="string"></advanced-field>
+      <advanced-field name="defaultvaluescript" type="string"></advanced-field>
+      <advanced-field name="options" type="string"></advanced-field>
+      <advanced-field name="optionvaluefield" type="string"></advanced-field>
+      <advanced-field name="optionlabelfield" type="string"></advanced-field>
+      <advanced-field name="optionscollection" type="string"></advanced-field>
+      <advanced-field name="visualizationorder" type="number"></advanced-field>
+      <advanced-field name="fieldgroup" type="string"></advanced-field>
+      <advanced-field name="translatekey" type="string"></advanced-field>
+    </gumga-search>
+  </div>
+</section>
+
+<section class="row">
+  <div class="col-md-12">
+    <div class="full-width-without-padding">
+      <gumga-list sort="gumgacustomfield.methods.sort(field, dir)"
+      class="table-striped table-condensed"
+      data="gumgacustomfield.data"
+      configuration="tableConfig">
+    </gumga-list>
+  </div>
+</div>
+</section>
+
+<section class="row">
+  <div class="col-md-12">
+
+    <pagination ng-model="page"
+    max-size="10"
+    boundary-links="true"
+    previous-text="‹"
+    next-Text="›"
+    first-text="«"
+    last-text="»"
+    items-per-page="gumgacustomfield.pageSize"
+    total-items="gumgacustomfield.count"
+    ng-change="gumgacustomfield.methods.get(page)
+    ">
+  </pagination>
+</div>
+</section>
